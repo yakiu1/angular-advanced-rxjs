@@ -1,0 +1,26 @@
+table {
+  color: #555555;
+  width: 70%;
+  background-color: #dddddd;
+  border-collapse: collapse;
+  margin-bottom: 10%;
+}
+
+table,
+th,
+td {
+  text-align: left;
+  border: 1px solid #cccccc;
+}
+
+td {
+  width: 33%;
+}
+
+p {
+  font-size: xx-large;
+}
+
+button{
+  margin: 5px;
+}

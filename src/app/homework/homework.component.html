@@ -1,0 +1,40 @@
+<p>{{ time$ | async }} 秒</p>
+
+<div style="display: flex;" id="toolbar">
+  <button mat-raised-button color="primary" [disabled]="!canStart" (click)="doStart()">開始</button>
+  <button mat-raised-button color="primary" (click)="doPause()">暫停</button>
+  <button mat-raised-button color="primary" (click)="doStop()">停止</button>
+  <button mat-raised-button color="primary" (click)="doRecord()">分圈</button>
+  <button mat-raised-button color="primary" (click)="doClear()">清除紀錄</button>
+</div>
+
+<div style="display: flex;">
+  <table>
+    <tr>
+      <th>
+        全部分圈
+      </th>
+      <th>
+        奇數分圈
+      </th>
+      <th>
+        偶數分圈
+      </th>
+    </tr>
+    <tr *ngFor="let time of allTimes;let i =index">
+      <td>
+        第{{ i + 1 }}次分圈{{ time }}
+      </td>
+      <td>
+        <ng-container *ngIf="(i+1)%2===1">
+          第{{ i + 1 }}次分圈{{ time }}
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngIf="(i+1)%2===0">
+          第{{ i + 1 }}次分圈{{ time }}
+        </ng-container>
+      </td>
+    </tr>
+  </table>
+</div>
